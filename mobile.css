@@ -1,0 +1,628 @@
+/* CipherNode mobile upgrade layer
+   Desktop styles are untouched. These rules only improve phone/tablet layouts. */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe,
+table {
+  max-width: 100%;
+}
+
+/* Hide mobile-only UI on desktop */
+.cn-mobile-menu-btn,
+.cn-mobile-menu-panel,
+.cn-mobile-actionbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --cn-bg: #0a0a0a;
+    --cn-deep: #050505;
+    --cn-card: #111113;
+    --cn-border: #27272a;
+    --cn-border-soft: #3f3f46;
+    --cn-accent: #22d3ee;
+    --cn-accent-bright: #00e5ff;
+    --cn-text: #e5e5e5;
+    --cn-muted: #a1a1aa;
+  }
+
+  body {
+    width: 100%;
+    padding-bottom: calc(76px + env(safe-area-inset-bottom)) !important;
+    background: var(--cn-bg) !important;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 15% 5%, rgba(34, 211, 238, 0.12), transparent 28%),
+      radial-gradient(circle at 90% 20%, rgba(37, 150, 190, 0.08), transparent 26%);
+  }
+
+  /* Top information bar */
+  body > div:first-of-type {
+    position: relative !important;
+    z-index: 60 !important;
+    font-size: 11px !important;
+  }
+
+  body > div:first-of-type > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 16px !important;
+    text-align: center !important;
+  }
+
+  body > div:first-of-type > div > div {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px 12px !important;
+  }
+
+  body > div:first-of-type a {
+    word-break: break-word !important;
+  }
+
+  body > div:first-of-type span[class*="rounded-full"] {
+    padding: 4px 10px !important;
+  }
+
+  /* Navbar */
+  body > nav {
+    top: 0 !important;
+    z-index: 90 !important;
+    backdrop-filter: blur(14px);
+    background: rgba(10, 10, 10, 0.94) !important;
+  }
+
+  body > nav > div {
+    min-height: 70px !important;
+    padding: 14px 16px !important;
+    gap: 12px !important;
+  }
+
+  body > nav > div > a:first-child {
+    font-size: 24px !important;
+    letter-spacing: -0.05em !important;
+    line-height: 1 !important;
+  }
+
+  /* Keep normal desktop nav hidden on mobile */
+  body > nav [class~="hidden"][class~="md:flex"] {
+    display: none !important;
+  }
+
+  /* Hide desktop login buttons on mobile; they are moved into menu/bottom bar */
+  body > nav > div > div:last-child {
+    display: none !important;
+  }
+
+  .cn-mobile-menu-btn {
+    display: inline-flex !important;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(63, 63, 70, 0.85);
+    border-radius: 14px;
+    background: #111113;
+    color: #e5e5e5;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .cn-mobile-menu-btn span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: #22d3ee;
+    transition: 0.2s ease;
+  }
+
+  body.cn-menu-open .cn-mobile-menu-btn span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  body.cn-menu-open .cn-mobile-menu-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  body.cn-menu-open .cn-mobile-menu-btn span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .cn-mobile-menu-panel {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    background: rgba(0, 0, 0, 0.64);
+    padding: 92px 14px 96px;
+    backdrop-filter: blur(8px);
+  }
+
+  .cn-mobile-menu-panel.open {
+    display: block;
+  }
+
+  .cn-mobile-menu-card {
+    background:
+      radial-gradient(circle at top right, rgba(34, 211, 238, 0.12), transparent 40%),
+      #111113;
+    border: 1px solid #27272a;
+    border-radius: 22px;
+    padding: 16px;
+    box-shadow: 0 24px 90px rgba(0,0,0,.45);
+  }
+
+  .cn-mobile-menu-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 10px;
+    padding: 4px 4px 10px;
+    border-bottom: 1px solid #27272a;
+  }
+
+  .cn-mobile-menu-close {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    background: #0a0a0a;
+    color: #e5e5e5;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .cn-mobile-menu-card > a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e5e5e5;
+    text-decoration: none;
+    padding: 14px 12px;
+    border-radius: 14px;
+    font-weight: 700;
+    border: 1px solid transparent;
+  }
+
+  .cn-mobile-menu-card > a i {
+    color: #22d3ee;
+    width: 20px;
+    text-align: center;
+  }
+
+  .cn-mobile-menu-card > a:hover,
+  .cn-mobile-menu-card > a:focus {
+    background: #18181b;
+    border-color: #27272a;
+  }
+
+  .cn-mobile-menu-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .cn-mobile-menu-actions a {
+    text-align: center;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 13px 16px;
+    font-weight: 800;
+  }
+
+  .cn-mobile-menu-actions a:first-child {
+    background: #22d3ee;
+    color: #0a0a0a;
+  }
+
+  .cn-mobile-menu-actions a:last-child {
+    background: #0a0a0a;
+    color: #e5e5e5;
+    border: 1px solid #27272a;
+  }
+
+  .cn-mobile-actionbar {
+    display: grid !important;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    z-index: 95;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px;
+    border-radius: 22px;
+    border: 1px solid rgba(63, 63, 70, 0.85);
+    background: rgba(17, 17, 19, 0.92);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 12px 40px rgba(0,0,0,.45);
+  }
+
+  .cn-mobile-actionbar a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    border-radius: 16px;
+  }
+
+  .cn-mobile-actionbar a:first-child {
+    background: #22d3ee;
+    color: #0a0a0a;
+  }
+
+  .cn-mobile-actionbar a:not(:first-child) {
+    background: #0a0a0a;
+    border: 1px solid #27272a;
+  }
+
+  .cn-mobile-actionbar i {
+    font-size: 15px;
+  }
+
+  /* Global mobile spacing */
+  main {
+    width: 100% !important;
+  }
+
+  section,
+  main[class~="px-6"],
+  section[class~="px-6"],
+  [class~="px-6"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  section[class~="py-32"] {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  section[class~="py-24"] {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  section[class~="py-20"],
+  main[class~="py-20"] {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  section[class~="py-8"] {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+  }
+
+  [class~="p-12"],
+  [class~="p-10"] {
+    padding: 24px !important;
+  }
+
+  [class~="p-8"] {
+    padding: 22px !important;
+  }
+
+  [class~="p-6"] {
+    padding: 18px !important;
+  }
+
+  /* Type scaling */
+  h1,
+  [class~="text-5xl"],
+  [class~="text-6xl"],
+  [class~="md:text-6xl"] {
+    font-size: clamp(32px, 10vw, 42px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.05em !important;
+  }
+
+  h2,
+  [class~="text-4xl"] {
+    font-size: clamp(26px, 8vw, 34px) !important;
+    line-height: 1.16 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  [class~="text-3xl"] {
+    font-size: 26px !important;
+  }
+
+  [class~="text-2xl"] {
+    font-size: 22px !important;
+  }
+
+  [class~="text-xl"] {
+    font-size: 18px !important;
+  }
+
+  p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  p,
+  li,
+  span,
+  a,
+  button,
+  select,
+  input,
+  textarea {
+    overflow-wrap: anywhere;
+  }
+
+  h1 br,
+  h2 br {
+    display: none !important;
+  }
+
+  /* Hero improvements */
+  main section:first-child {
+    text-align: center !important;
+  }
+
+  main section:first-child img[class~="w-72"] {
+    width: 132px !important;
+    height: 132px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  main section:first-child p {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  main section:first-child .flex {
+    justify-content: center !important;
+  }
+
+  main section:first-child button,
+  main section:first-child a {
+    max-width: 100% !important;
+  }
+
+  /* CTA buttons and action rows */
+  main a[class*="rounded"],
+  main button[class*="rounded"] {
+    min-height: 44px;
+  }
+
+  main section:first-child a[class*="px-8"],
+  main section:first-child button[class*="px-8"] {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Cards */
+  [class~="rounded-3xl"] {
+    border-radius: 20px !important;
+  }
+
+  [class~="rounded-2xl"] {
+    border-radius: 16px !important;
+  }
+
+  .shadow-2xl {
+    box-shadow: none !important;
+  }
+
+  main [class~="grid"] {
+    gap: 20px !important;
+  }
+
+  main [class~="max-w-7xl"],
+  main [class~="max-w-6xl"],
+  main [class~="max-w-5xl"],
+  main [class~="max-w-4xl"] {
+    max-width: 100% !important;
+  }
+
+  /* Hardware/spec rows and similar detail rows */
+  main [class~="justify-between"][class~="border-b"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  main [class~="justify-between"][class~="border-b"] span:last-child {
+    text-align: left !important;
+  }
+
+  /* Pricing calculator */
+  #calculator [class~="p-10"] {
+    padding: 22px !important;
+  }
+
+  #calculator select {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #priceDisplay {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+  }
+
+  #ramDisplay {
+    font-size: 18px !important;
+  }
+
+  #monthlyBtn,
+  #annuallyBtn {
+    flex: 1 1 130px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    font-size: 13px !important;
+  }
+
+  /* Panel preview tabs */
+  .tab-btn {
+    flex: 1 1 42% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    font-size: 13px !important;
+  }
+
+  #panel-img {
+    border-radius: 10px !important;
+  }
+
+  /* FAQ */
+  button[onclick^="toggleFAQ"] {
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+
+  /* Forms */
+  form input,
+  form textarea,
+  form select,
+  form button {
+    width: 100% !important;
+  }
+
+  form [class~="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Legal pages */
+  .legal-content,
+  main section.bg-\[\#111113\] {
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Footer */
+  footer {
+    padding-top: 48px !important;
+    padding-bottom: 96px !important;
+  }
+
+  footer [class~="grid"] {
+    gap: 32px !important;
+  }
+
+  footer .flex.items-center.gap-3 {
+    align-items: center !important;
+  }
+
+  footer img[class~="w-14"] {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  footer a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  [class~="p-12"],
+  [class~="p-10"],
+  [class~="p-8"] {
+    padding: 20px !important;
+  }
+
+  [class~="gap-10"] {
+    gap: 24px !important;
+  }
+
+  [class~="gap-8"] {
+    gap: 20px !important;
+  }
+
+  [class~="mb-16"] {
+    margin-bottom: 36px !important;
+  }
+
+  [class~="mb-12"] {
+    margin-bottom: 30px !important;
+  }
+
+  [class~="mt-16"] {
+    margin-top: 38px !important;
+  }
+
+  main section:first-child img[class~="w-72"] {
+    width: 118px !important;
+    height: 118px !important;
+  }
+
+  .cn-mobile-menu-panel {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
+/* v5 fix: prevent the desktop/top nav from getting stuck after mobile sidebar use */
+@media (max-width: 767px) {
+  body > nav {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  body.cn-menu-open {
+    overflow: hidden !important;
+  }
+
+  body.cn-menu-open > nav {
+    position: sticky !important;
+    top: 0 !important;
+  }
+
+  .cn-mobile-menu-panel {
+    z-index: 1000 !important;
+  }
+
+  .cn-mobile-actionbar {
+    z-index: 1001 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  body.cn-menu-open {
+    overflow: auto !important;
+  }
+
+  .cn-mobile-menu-panel,
+  .cn-mobile-menu-panel.open {
+    display: none !important;
+  }
+}

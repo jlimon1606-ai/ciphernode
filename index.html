@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CipherNode - Premium Minecraft Server Hosting</title>
+    <meta name="description" content="CipherNode provides fast, reliable Minecraft server hosting with budget and premium plans, DDoS protection, NVMe storage, backups, and easy game panel access.">
+    <meta name="keywords" content="Minecraft server hosting, budget Minecraft hosting, premium Minecraft hosting, game server hosting, DDoS protected Minecraft servers, NVMe Minecraft hosting">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ciphernode.cloud/">
+
+    <meta property="og:title" content="CipherNode - Premium Minecraft Server Hosting">
+    <meta property="og:description" content="CipherNode provides fast, reliable Minecraft server hosting with budget and premium plans, DDoS protection, NVMe storage, backups, and easy game panel access.">
+    <meta property="og:url" content="https://ciphernode.cloud/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="CipherNode">
+    <meta property="og:image" content="https://ciphernode.cloud/uploads/ciphernode_2.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CipherNode - Premium Minecraft Server Hosting">
+    <meta name="twitter:description" content="CipherNode provides fast, reliable Minecraft server hosting with budget and premium plans, DDoS protection, NVMe storage, backups, and easy game panel access.">
+    <meta name="twitter:image" content="https://ciphernode.cloud/uploads/ciphernode_2.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "CipherNode",
+  "url": "https://ciphernode.cloud/",
+  "description": "CipherNode provides fast, reliable Minecraft server hosting with budget and premium plans, DDoS protection, NVMe storage, backups, and easy game panel access.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CipherNode",
+    "url": "https://ciphernode.cloud/",
+    "logo": "https://ciphernode.cloud/uploads/ciphernode_2.png",
+    "sameAs": [
+      "https://docs.ciphernode.cloud",
+      "https://tools.ciphernode.cloud",
+      "https://status.ciphernode.cloud"
+    ]
+  }
+}
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e5e5; overflow-x: hidden; }
+        .nav-link { transition: 0.3s; }
+        .nav-link:hover { color: #22d3ee; }
+        
+        /* Slider Styling */
+        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #22d3ee; cursor: pointer; margin-top: -6px; }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: #27272a; border-radius: 2px; }
+        select option:disabled { color: #71717a; background: #111113; }
+
+        /* Modal hidden state */
+        .modal-hidden { display: none; opacity: 0; pointer-events: none; }
+        .modal-active { display: flex; opacity: 1; pointer-events: auto; transition: opacity 0.3s ease; }
+
+        /* Consistent Teal Accent */
+        .text-accent { color: #00E5FF; }
+        .bg-accent { background-color: #00E5FF; }
+        .border-accent { border-color: #00E5FF; }
+    </style>
+    <link href="mobile.css?v=5" rel="stylesheet" type="text/css" />
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <div class="bg-[#0a0a0a] border-b border-zinc-800 py-3 text-sm relative z-50">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2"><span class="text-emerald-400">●</span> United States</span>
+                <span>Contact: <a href="mailto:support@ciphernode.cloud" class="text-[#22d3ee] hover:underline">support@ciphernode.cloud</a></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="px-4 py-1.5 bg-zinc-900 rounded-full text-xs font-medium">US</span>
+                <span class="text-[#22d3ee] font-medium">USD</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-[#0a0a0a] border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="text-3xl font-bold tracking-tighter text-white">CipherNode</a>
+            <button class="cn-mobile-menu-btn" type="button" aria-label="Open mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="https://my.ciphernode.cloud/announcements" class="nav-link">Announcements</a>
+                <a href="index.html#calculator" class="nav-link">Plans</a>
+                <a href="https://docs.ciphernode.cloud/" class="nav-link">Documentation</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://panel.ciphernode.cloud/" class="px-6 py-3 bg-white hover:bg-[#2596be] hover:text-white text-black font-semibold rounded-2xl transition-all">Panel Login</a>
+                <a href="https://my.ciphernode.cloud/client/login/" class="px-6 py-3 bg-white hover:bg-[#2596be] hover:text-white text-black font-semibold rounded-2xl transition-all">Client Login</a>
+            </div>
+        </div>
+    </nav>
+    <div class="cn-mobile-menu-panel" aria-hidden="true">
+        <div class="cn-mobile-menu-card">
+            <div class="cn-mobile-menu-head">
+                <span>CipherNode</span>
+                <button class="cn-mobile-menu-close" type="button" aria-label="Close menu">×</button>
+            </div>
+            <a href="https://my.ciphernode.cloud/announcements"><i class="fa-solid fa-bullhorn"></i> Announcements</a>
+            <a href="index.html#calculator"><i class="fa-solid fa-server"></i> Plans</a>
+            <a href="https://docs.ciphernode.cloud/"><i class="fa-solid fa-book"></i> Documentation</a>
+            <a href="https://tools.ciphernode.cloud"><i class="fa-solid fa-screwdriver-wrench"></i> Tools</a>
+            <a href="contact.html"><i class="fa-solid fa-headset"></i> Contact Us</a>
+            <div class="cn-mobile-menu-actions">
+                <a href="https://panel.ciphernode.cloud/">Panel Login</a>
+                <a href="https://my.ciphernode.cloud/client/login/">Client Login</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cn-mobile-actionbar">
+        <a href="https://panel.ciphernode.cloud/"><i class="fa-solid fa-gamepad"></i><span>Panel</span></a>
+        <a href="https://my.ciphernode.cloud/client/login/"><i class="fa-solid fa-user"></i><span>Client</span></a>
+        <a href="https://support.ciphernode.cloud/index.php?a=add"><i class="fa-solid fa-ticket"></i><span>Support</span></a>
+    </div>
+
+
+<main class="flex-1">
+        <section class="relative py-32 text-center px-6 overflow-hidden">
+            <div id="particles-js" class="absolute inset-0 z-0 opacity-50 pointer-events-none"></div>
+            
+            <div class="relative z-10">
+                <img src="https://ciphernode.cloud/uploads/ciphernode_2.png" class="w-[280px] md:w-[360px] h-auto object-contain mx-auto mb-8">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">Power Up Your Minecraft<br>Experience</h1>
+                <p class="text-zinc-400 text-lg mb-10">High-performance hosting built for serious communities.</p>
+                <button onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})" class="inline-flex items-center gap-2 bg-[#22d3ee] hover:bg-[#2596be] text-black font-bold py-3 px-8 rounded-full transition-all">
+                    Start Hosting Today <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Data Protection Section -->
+        <section class="py-24 bg-[#0a0a0a] border border-zinc-800/60">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <p class="text-[#00E5FF] font-bold tracking-widest uppercase text-sm mb-3">Data Protection</p>
+                    <h2 class="text-4xl font-bold text-white mb-4">Industry-Leading Backup System</h2>
+                    <p class="text-zinc-400">Your server data is protected with automated backups stored securely off-site. Restore anytime with a single click.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-[#111113] border border-zinc-800/60 p-6 rounded-xl">
+                        <i class="fas fa-shield-alt text-[#00E5FF] text-2xl mb-4"></i>
+                        <h3 class="text-white font-semibold mb-2">Secure Off-Site Storage</h3>
+                        <p class="text-zinc-400 text-sm">Backups stored remotely—safe from local failures</p>
+                    </div>
+                    <div class="bg-[#111113] border border-zinc-800/60 p-6 rounded-xl">
+                        <i class="fas fa-history text-[#00E5FF] text-2xl mb-4"></i>
+                        <h3 class="text-white font-semibold mb-2">6-Hour Backups, 7-Day Retention</h3>
+                        <p class="text-zinc-400 text-sm">Automatic snapshots every 6 hours kept for 7 days</p>
+                    </div>
+                    <div class="bg-[#111113] border border-zinc-800/60 p-6 rounded-xl">
+                        <i class="fas fa-save text-[#00E5FF] text-2xl mb-4"></i>
+                        <h3 class="text-white font-semibold mb-2">5 Manual Backups Included</h3>
+                        <p class="text-zinc-400 text-sm">Create and restore your own backups anytime</p>
+                    </div>
+                    <div class="bg-[#111113] border border-zinc-800/60 p-6 rounded-xl">
+                        <i class="fas fa-undo text-[#00E5FF] text-2xl mb-4"></i>
+                        <h3 class="text-white font-semibold mb-2">One-Click Restore</h3>
+                        <p class="text-zinc-400 text-sm">Recover your server in seconds, not hours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 border-t border-zinc-900 bg-[#0a0a0a]">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="bg-[#18181b] rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl">
+                    <div class="p-10 md:p-12">
+                        <h2 class="text-4xl font-bold text-white mb-6">Advanced DDoS Protection</h2>
+                        <p class="text-zinc-400 text-xl leading-relaxed">Our servers are protected against DDoS attacks at the network (L3) and transport (L4) layers in data centers around the world.</p>
+                    </div>
+                    
+                    <div class="bg-[#202024] p-10 md:p-12 border-t border-zinc-800">
+                        <h3 class="text-white text-lg font-semibold mb-6">We protect your servers against all types of DDoS attacks</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-4 text-zinc-300">
+                                <i class="fas fa-check text-[#22d3ee]"></i> 
+                                <span class="text-lg">Flood/volumetric attacks on network interfaces</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-zinc-300">
+                                <i class="fas fa-check text-[#22d3ee]"></i> 
+                                <span class="text-lg">Connection attacks on TCP/UDP</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-zinc-300">
+                                <i class="fas fa-check text-[#22d3ee]"></i> 
+                                <span class="text-lg">High/low-frequency attacks on the application</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-8 text-center bg-[#0a0a0a] border-t border-zinc-900">
+            <div class="inline-flex bg-[#111113] p-1 rounded-full border border-zinc-800">
+                <button id="monthlyBtn" onclick="updateCalculator('monthly')" class="px-8 py-2 rounded-full font-medium transition bg-[#00E5FF] text-black">Monthly</button>
+                <button id="annuallyBtn" onclick="updateCalculator('annually')" class="px-8 py-2 rounded-full font-medium transition text-zinc-400 hover:text-white">Annually <span class="ml-1 text-[10px] bg-orange-500/20 text-orange-400 px-1.5 py-0.5 rounded">SAVE 3%</span></button>
+            </div>
+        </section>
+
+        <section id="calculator" class="pb-24 relative z-10 bg-[#0a0a0a]">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="bg-[#111] border border-zinc-800 rounded-3xl p-10">
+                    <div class="grid md:grid-cols-2 gap-6 mb-10">
+                        <select id="tierSelect" onchange="updateCalculator()" class="bg-black border border-zinc-700 p-4 rounded-2xl text-white outline-none">
+                            <option value="budget">Budget</option>
+                            <option value="premium" disabled>Premium (Coming Soon)</option>
+                        </select>
+                        <select id="locSelect" onchange="updateCalculator()" class="bg-black border border-zinc-700 p-4 rounded-2xl text-white outline-none">
+                            <option value="us-w">US-West (Salt Lake City)</option>
+                            <option value="us-e" disabled>US-East (Coming Soon)</option>
+                        </select>
+                    </div>
+                    
+                    <input type="range" id="ramSlider" min="0" max="5" step="1" value="1" oninput="updateCalculator()" class="w-full accent-[#00E5FF]">
+                    
+                    <div class="grid md:grid-cols-2 gap-10 items-center mt-8">
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-white" id="priceDisplay">$8.00 <span class="text-xl text-zinc-500 font-normal">/mo</span></div>
+                            <div class="text-xl text-[#00E5FF] mt-3 font-semibold" id="ramDisplay">8 GB RAM</div>
+                            <div class="text-sm text-zinc-400 mt-2" id="slotDisplay">Recommended: 40-60 Players</div>
+                        </div>
+                        <ul class="space-y-3 text-zinc-300 text-sm">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> Ryzen 5000 Series / Intel Xeon</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> High Speed Memory</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> NVMe Storage</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-[#00E5FF]"></i> Enterprise DDoS Protection</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-10 pt-8 border-t border-zinc-800 text-center">
+                        <p id="purchaseSummary" class="text-zinc-400 text-sm mb-5">Budget • 8 GB RAM • US-West (Salt Lake City) • Monthly</p>
+                        <a id="purchaseBtn" href="https://my.ciphernode.cloud/order/?tier=budget&ram=8&location=us-w&billing=monthly" class="inline-flex items-center justify-center gap-2 bg-[#22d3ee] hover:bg-[#2596be] text-black hover:text-white font-bold py-4 px-10 rounded-full transition-all w-full sm:w-auto">
+                            Purchase This Plan <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-[#0a0a0a] border-t border-zinc-900">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+                <p class="text-[#00E5FF] font-bold tracking-widest uppercase text-sm mb-3">Control Panel</p>
+                <h2 class="text-4xl font-bold text-white mb-4">Manage Your Server Like a Pro</h2>
+                <p class="text-zinc-400 mb-12">Our panel is continually evolving and improving to provide you with the best experience possible.</p>
+
+                <div class="flex flex-wrap justify-center gap-2 mb-10 bg-[#111113] p-2 rounded-full inline-flex">
+                    <button id="tab-modpacks" onclick="showPanel('modpacks', this)" class="tab-btn px-6 py-2 rounded-full text-black font-medium transition bg-[#00E5FF]">Modpacks</button>
+                    <button id="tab-files" onclick="showPanel('files', this)" class="tab-btn px-6 py-2 rounded-full text-zinc-400 hover:text-white transition">File Manager</button>
+                    <button id="tab-subusers" onclick="showPanel('subusers', this)" class="tab-btn px-6 py-2 rounded-full text-zinc-400 hover:text-white transition">Subusers</button>
+                    <button id="tab-backups" onclick="showPanel('backups', this)" class="tab-btn px-6 py-2 rounded-full text-zinc-400 hover:text-white transition">Backups</button>
+                </div>
+
+                <div class="relative bg-[#050505] border border-zinc-800 rounded-2xl p-4 shadow-2xl">
+                    <img id="panel-img" src="uploads/panel_modpackss.png" alt="Control Panel View" class="w-full rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="py-24 border-t border-zinc-900 bg-[#0a0a0a]">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <p class="text-[#22d3ee] font-bold tracking-widest uppercase text-sm mb-3">Support</p>
+                    <h2 class="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+                    <p class="text-zinc-400">Need answers? We've got you covered.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div class="space-y-10">
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-5">Minecraft</h3>
+                            <div class="space-y-4">
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">Are Forge/Fabric supported?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        Yes. CipherNode supports popular server software like Vanilla, Paper, Purpur, Forge, Fabric, and many modded setups depending on the game version and pack requirements.
+                                    </div>
+                                </div>
+
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">What mods and plugins can I install?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        You can install most plugins, datapacks, and modpacks that are compatible with your chosen server software. If you are unsure whether a large pack will fit your plan, start a ticket and we can help you choose the right setup.
+                                    </div>
+                                </div>
+
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">What panel do you offer?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        CipherNode uses a modern game panel that gives you console access, file management, startup control, subuser access, backups, and SFTP support for larger file transfers.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-5">Billing</h3>
+                            <div class="space-y-4">
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">What payment methods do you accept?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        We accept the payment methods shown in the client area at checkout. If you need help completing an order, contact support and we can point you in the right direction.
+                                    </div>
+                                </div>
+
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">Do you offer a free trial?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        We do not currently offer free trials. However, CipherNode includes a 7-day money-back guarantee so you can test the service with less risk.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-10">
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-5">Plans &amp; Resources</h3>
+                            <div class="space-y-4">
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">What if I need more storage, RAM, or CPU?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        If your community grows, you can upgrade to a larger plan when upgrades are available. We recommend taking a backup before major changes so your server can be moved cleanly.
+                                    </div>
+                                </div>
+
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">Do you offer backups?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        Yes. CipherNode includes automated off-site backups every 6 hours with 7-day retention, plus 5 manual backups for customers who want extra restore points.
+                                    </div>
+                                </div>
+
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">Do you offer dedicated IPs?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        Dedicated IP availability depends on the location and product. If you need one for a specific use case, reach out to support before ordering and we will let you know what is available.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-5">Locations &amp; Support</h3>
+                            <div class="space-y-4">
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">What locations are available?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        Public orders are currently available for Budget hosting in US-West. Additional locations and premium options are planned and will be enabled as inventory becomes available.
+                                    </div>
+                                </div>
+
+                                <div class="border border-zinc-800 rounded-2xl overflow-hidden bg-[#111]">
+                                    <button onclick="toggleFAQ(this)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#18181b] transition">
+                                        <span class="font-bold text-white">How do I get support?</span>
+                                        <i class="fas fa-chevron-right text-[#e5e7eb]"></i>
+                                    </button>
+                                    <div class="hidden px-6 pb-6 text-zinc-400 leading-relaxed">
+                                        The fastest way to get help is through the client area support system. When opening a ticket, include as much detail as possible, such as your server name, issue, and any error messages or logs.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="py-24 border-t border-zinc-900 bg-[#0a0a0a] text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">Power Up Your Gaming Experience!</h2>
+            <p class="text-zinc-400 mb-8">Try risk-free. 7-day money-back guarantee.</p>
+            <a href="#calculator" class="inline-block bg-accent hover:bg-[#00cce6] text-black font-bold py-4 px-10 rounded-full transition-all">
+                Start Hosting Today
+            </a>
+        </section>
+    </main>
+
+    <footer class="bg-[#050505] border-t border-zinc-800 pt-20 pb-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-5 gap-12 footer-grid">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://ciphernode.cloud/uploads/ciphernode_2.png" class="w-20 md:w-24 h-auto object-contain" alt="CipherNode Logo">
+                        <div>
+                            <h2 class="text-3xl font-bold">CipherNode</h2>
+                            <p class="text-zinc-500 text-sm">Premium Minecraft Hosting</p>
+                        </div>
+                    </div>
+                    <p class="text-zinc-500 max-w-sm leading-7">High-performance Minecraft hosting with enterprise-grade hardware, DDoS protection, and premium uptime reliability.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-5">Company</h3>
+                    <div class="space-y-3 text-zinc-500">
+                        <a href="aboutus.html" class="block hover:text-[#22d3ee] transition">About Us</a>
+                        <a href="https://docs.ciphernode.cloud" class="block hover:text-[#22d3ee] transition">Documentation</a>
+                        <a href="https://status.ciphernode.cloud" class="block hover:text-[#22d3ee] transition">Status</a>
+                        <a href="https://tools.ciphernode.cloud" class="block hover:text-[#22d3ee] transition">Tools</a>
+                        <a href="hardware.html" class="block hover:text-[#22d3ee] transition">Hardware</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-5">Legal</h3>
+                    <div class="space-y-3 text-zinc-500">
+                        <a href="tos.html" class="block hover:text-[#22d3ee] transition">Terms of Service</a>
+                        <a href="privacy.html" class="block hover:text-[#22d3ee] transition">Privacy Policy</a>
+                        <a href="refundpolicy.html" class="block hover:text-[#22d3ee] transition">Refund Policy</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-5">Contact</h3>
+                    <div class="space-y-3 text-zinc-500">
+                        <a href="contact.html" class="block hover:text-[#22d3ee] transition">Send Us A Message!</a>
+                        <p>support@ciphernode.cloud</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-zinc-600 mt-16 text-sm">© 2026 CipherNode. All rights reserved.</div>
+        </div>
+    </footer>
+
+<div id="imageGallery" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm modal-hidden items-center justify-center p-6">
+        <div class="max-w-5xl w-full relative">
+            <button onclick="toggleGallery()" class="absolute -top-12 right-0 text-white hover:text-[#22d3ee] text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="grid md:grid-cols-2 gap-6 overflow-y-auto max-h-[80vh] p-4">
+                <img src="https://via.placeholder.com/800x500/111/333?text=Panel+Image+1" class="w-full rounded-xl border border-zinc-700 shadow-2xl">
+                <img src="https://via.placeholder.com/800x500/111/333?text=Panel+Image+2" class="w-full rounded-xl border border-zinc-700 shadow-2xl">
+                <img src="https://via.placeholder.com/800x500/111/333?text=Panel+Image+3" class="w-full rounded-xl border border-zinc-700 shadow-2xl">
+                <img src="https://via.placeholder.com/800x500/111/333?text=Panel+Image+4" class="w-full rounded-xl border border-zinc-700 shadow-2xl">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleGallery() {
+            const gallery = document.getElementById('imageGallery');
+            if (gallery.classList.contains('modal-hidden')) {
+                gallery.classList.remove('modal-hidden');
+                gallery.classList.add('modal-active');
+                document.body.style.overflow = 'hidden'; 
+            } else {
+                gallery.classList.add('modal-hidden');
+                gallery.classList.remove('modal-active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#22d3ee" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#22d3ee", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } }, "push": { "particles_nb": 4 } }
+            },
+            "retina_detect": true
+        });
+
+        function toggleFAQ(btn) {
+            const content = btn.nextElementSibling;
+            content.classList.toggle('hidden');
+            btn.querySelector('i').classList.toggle('fa-chevron-up');
+            btn.querySelector('i').classList.toggle('fa-chevron-down');
+        }
+
+        const panelImages = {
+            'modpacks': 'uploads/panel_modpackss.png',
+            'files': 'uploads/panel_filemanager.png',
+            'subusers': 'uploads/panel_subusers.png',
+            'backups': 'uploads/panel_backups.png'
+        };
+
+        function showPanel(type, clickedBtn) {
+            document.getElementById('panel-img').src = panelImages[type];
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-[#00E5FF]', 'text-black');
+                btn.classList.add('text-zinc-400');
+            });
+            clickedBtn.classList.remove('text-zinc-400');
+            clickedBtn.classList.add('bg-[#00E5FF]', 'text-black');
+        }
+
+        const ramLevels = [4, 8, 12, 16, 24, 32];
+        const slotLevels = ["20-30", "40-60", "60-90", "90-120", "150-200", "250+"];
+        const basePrices = [4.00, 8.00, 12.00, 16.00, 24.00, 32.00];
+        let currentCycle = 'monthly';
+
+        function updateCalculator(cycle = currentCycle) {
+            currentCycle = cycle;
+            const sliderValue = document.getElementById('ramSlider').value;
+            const tierSelect = document.getElementById('tierSelect');
+            const locSelect = document.getElementById('locSelect');
+
+            // Available now: Budget in US-West only.
+            // Premium and US-East stay disabled until you have inventory there.
+            if (tierSelect.value !== 'budget') tierSelect.value = 'budget';
+            if (locSelect.value !== 'us-w') locSelect.value = 'us-w';
+
+            const tier = tierSelect.value;
+            
+            const monthlyBtn = document.getElementById('monthlyBtn');
+            const annuallyBtn = document.getElementById('annuallyBtn');
+            
+            if (cycle === 'monthly') {
+                monthlyBtn.className = "px-8 py-2 rounded-full font-medium transition bg-[#00E5FF] text-black";
+                annuallyBtn.className = "px-8 py-2 rounded-full font-medium transition text-zinc-400 hover:text-white";
+            } else {
+                annuallyBtn.className = "px-8 py-2 rounded-full font-medium transition bg-[#00E5FF] text-black";
+                monthlyBtn.className = "px-8 py-2 rounded-full font-medium transition text-zinc-400 hover:text-white";
+            }
+
+            let price = basePrices[sliderValue];
+            if (currentCycle === 'annually') price *= 0.97;
+
+            const ram = ramLevels[sliderValue];
+            const location = locSelect.value;
+            const locationText = locSelect.options[locSelect.selectedIndex].text;
+            const tierText = tierSelect.options[tierSelect.selectedIndex].text;
+            const cycleText = currentCycle === 'monthly' ? 'Monthly' : 'Annually';
+
+            document.getElementById('priceDisplay').innerHTML = `$${price.toFixed(2)} <span class="text-xl text-zinc-500 font-normal">/mo</span>`;
+            document.getElementById('ramDisplay').innerText = `${ram} GB RAM`;
+            document.getElementById('slotDisplay').innerText = `Recommended: ${slotLevels[sliderValue]} Players`;
+
+            const purchaseSummary = document.getElementById('purchaseSummary');
+            const purchaseBtn = document.getElementById('purchaseBtn');
+
+            if (purchaseSummary && purchaseBtn) {
+                purchaseSummary.innerText = `${tierText} • ${ram} GB RAM • ${locationText} • ${cycleText}`;
+                purchaseBtn.href = `https://my.ciphernode.cloud/order/?tier=${encodeURIComponent(tier)}&ram=${encodeURIComponent(ram)}&location=${encodeURIComponent(location)}&billing=${encodeURIComponent(currentCycle)}`;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => updateCalculator());
+    </script>
+    <script src="mobile.js?v=5"></script>
+    
+<script data-cfasync="false">
+  window.libredeskSettings = {
+    baseURL: 'https://lc.ciphernode.cloud',
+    inboxID: 'd8242df9-7b89-482d-9318-deb7017485b4'
+  };
+</script>
+
+<script
+  data-cfasync="false"
+  src="https://lc.ciphernode.cloud/widget.js"
+  onload="new window.Libredesk(window.libredeskSettings);">
+</script>
+</body>
+</html>
